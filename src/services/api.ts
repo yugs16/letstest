@@ -1,3 +1,6 @@
+const baseURI = 'http://myserver/api/v1';
+const headers = ['Content-Type', 'application/json'];
+
 export const getCharacters = async (characterType = '') => {
-	return (await fetch(`/api/v1/characters${characterType}`)).json();
+	return (await fetch(`/characters${characterType}`)).json();
 };
