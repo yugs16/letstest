@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Card from '../components/Card';
+import CharacterCard from '../components/CharacterCard';
 
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -43,11 +43,18 @@ function SelectSmall(props: SelectSmallProps) {
 function CardView() {
 	const [characterType, setCharacterType] = useState<string>();
 	const { data, isLoading, isError } = useGetCharacters(characterType);
+	console.log('isLoading.. ', isLoading, data);
 	return (
 		<>
 			<SelectSmall onChange={setCharacterType} value={characterType} />
-			{/* <Iterator component={Card} data={data} isLoading={isLoading}></Iterator>
-			{isError && <div>Some Error please check!!</div>} */}
+			{data && (
+				<Iterator
+					component={CharacterCard}
+					data={data}
+					isLoading={isLoading}
+				></Iterator>
+			)}
+			{isError && <div>Some Error please check!!</div>}
 		</>
 	);
 }

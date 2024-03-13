@@ -7,3 +7,7 @@ export interface DataProps {
 	type: string;
 	roles: RolesProps;
 }
+
+export interface CharactersResponse {
+	name?: string;
+}

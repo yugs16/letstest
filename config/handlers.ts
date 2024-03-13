@@ -6,6 +6,7 @@ const headers = ['Content-Type', 'application/json'];
 
 const handlers = [
 	rest.get(`/characters`, () => {
+		console.log('seeeeeeeeeeeeeeeeeeeeeeeeeeeee');
 		return HttpResponse.json(mockAllCharacters);
 	}),
 ];
