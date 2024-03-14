@@ -12,7 +12,8 @@
 		"fruit": {
 			"name": "Gum-Gum Fruit"
 		},
-		"image": "https://www.shutterstock.com/shutterstock/photos/2347735421/display_1500/stock-photo-one-piece-anime-character-monkey-d-luffy-gear-2347735421.jpg"
+		"isStrawHat": true,
+		"image": "luffy.webp"
 	},
 	{
 		"id": 2,
@@ -27,7 +28,8 @@
 		"fruit": {
 			"name": "Gum-Gum Fruit"
 		},
-		"image": "https://www.shutterstock.com/shutterstock/photos/2347735421/display_1500/stock-photo-one-piece-anime-character-monkey-d-luffy-gear-2347735421.jpg"
+		"isStrawHat": true,
+		"image": "zoro.jpg"
 	},
 	{
 		"id": 3,
@@ -41,7 +43,8 @@
 		},
 		"job": "Navigator",
 		"status": "living",
-		"image": "https://www.shutterstock.com/shutterstock/photos/2347735421/display_1500/stock-photo-one-piece-anime-character-monkey-d-luffy-gear-2347735421.jpg"
+		"isStrawHat": true,
+		"image": "nami.png"
 	},
 	{
 		"id": 4,
@@ -55,11 +58,12 @@
 		},
 		"job": "Sniper",
 		"status": "living",
-		"image": "https://www.shutterstock.com/shutterstock/photos/2347735421/display_1500/stock-photo-one-piece-anime-character-monkey-d-luffy-gear-2347735421.jpg"
+		"isStrawHat": true,
+		"image": "usopp.webp"
 	},
 	{
 		"id": 5,
-		"name": "Sanji",
+		"name": "Vinsmoke Sanji",
 		"size": "180cm",
 		"age": "21 ans",
 		"bounty": "330.000.000",
@@ -67,25 +71,10 @@
 			"id": 1,
 			"name": "Straw Hats"
 		},
+		"isStrawHat": true,
 		"job": "Cook",
 		"status": "living",
-		"image": "https://www.shutterstock.com/shutterstock/photos/2347735421/display_1500/stock-photo-one-piece-anime-character-monkey-d-luffy-gear-2347735421.jpg"
-	},
-	{
-		"id": 7,
-		"name": "Nico Robin",
-		"size": "188cm",
-		"age": "30 ans",
-		"bounty": "130.000.000",
-		"crew": {
-			"id": 1,
-			"name": "Straw Hats"
-		},
-		"fruit": {
-			"id": 6,
-			"name": "Fruit Des Éclosions"
-		},
-		"image": "https://www.shutterstock.com/shutterstock/photos/2347735421/display_1500/stock-photo-one-piece-anime-character-monkey-d-luffy-gear-2347735421.jpg"
+		"image": "sanji.jpg"
 	},
 	{
 		"id": 10,
@@ -97,9 +86,10 @@
 			"id": 1,
 			"name": "Straw Hats"
 		},
+		"isStrawHat": true,
 		"job": "Helmsman",
 		"status": "living",
-		"image": "https://www.shutterstock.com/shutterstock/photos/2347735421/display_1500/stock-photo-one-piece-anime-character-monkey-d-luffy-gear-2347735421.jpg"
+		"image": "jinbe.jpg"
 	},
 	{
 		"id": 14,
@@ -115,6 +105,258 @@
 			"id": 47,
 			"name": "Fruit of the Barrier"
 		},
-		"image": "https://www.shutterstock.com/shutterstock/photos/2347735421/display_1500/stock-photo-one-piece-anime-character-monkey-d-luffy-gear-2347735421.jpg"
+		"image": "bartolomeo.jpg"
+	},
+	{
+		"id": 81,
+		"name": "Dracule Mihawk",
+		"size": "198cm",
+		"age": "43 ans",
+		"bounty": "",
+		"job": "3.590.000.000",
+		"status": "living",
+		"image": "mihawkv2.jpg",
+		"crew": {
+			"id": 32,
+			"name": "The Cross Guild",
+			"description": null
+		}
+	},
+	{
+		"id": 82,
+		"name": "Crocodile",
+		"size": "253cm",
+		"age": "46 ans",
+		"bounty": "81.000.000",
+		"job": "",
+		"status": "living",
+		"image": "crocodile.png",
+		"crew": {
+			"id": 32,
+			"name": "The Cross Guild",
+			"description": null
+		}
+	},
+	{
+		"id": 54,
+		"name": "Trafalgar D. Water Law",
+		"size": "191cm",
+		"age": "26 ans",
+		"bounty": "500.000.000",
+		"crew": {
+			"id": 32,
+			"name": "The Heart crew",
+			"description": null
+		},
+		"fruit": {
+			"id": 27,
+			"name": "Fruit of the Scalpel",
+			"type": "Paramecia",
+			"filename": "https://images.api-onepiece.com/fruits/9e630a35c5acb817bfea06e65d72b661.png"
+		},
+		"job": "Captain",
+		"status": "living",
+		"image": "law.webp"
+	},
+	{
+		"id": 247,
+		"name": "Marshall D. Teach",
+		"size": "344cm",
+		"age": "40 ans",
+		"bounty": "2.247.600.000",
+		"crew": {
+			"id": 22,
+			"name": "Blackbeard\u0027s crew"
+		},
+		"fruit": {
+			"id": 85,
+			"name": "Fruit of Darkness"
+		},
+		"job": "Pirate",
+		"status": "living",
+		"image": "blackbeard.webp"
+	},
+	{
+		"id": 187,
+		"name": "Kaido",
+		"size": "710cm",
+		"age": "59 ans",
+		"bounty": "4.611.100.000",
+		"crew": {
+			"id": 44,
+			"name": "The Hundred Beasts crew"
+		},
+		"fruit": {
+			"id": 122,
+			"name": "Fruit of the Fish, Azure Dragon version",
+			"description": "whoever eats it can transform into an azure dragon.",
+			"type": "Zoan Mythique",
+			"filename": "https://images.api-onepiece.com/fruits/f640990d0f10e51a1bc097ffe6ab511c.jpg"
+		},
+		"job": "Captain",
+		"status": "living",
+		"image": "kaido.webp"
+	},
+	{
+		"id": 96,
+		"name": "Charlotte Linlin / Big Mom",
+		"size": "880cm",
+		"age": "68 ans",
+		"bounty": "4.388.000.000",
+		"crew": {
+			"id": 53,
+			"name": "Big Mom\u0027s crew",
+			"is_yonko": true
+		},
+		"fruit": {
+			"id": 60,
+			"name": "Fruit of Souls"
+		},
+		"job": "Captain",
+		"status": "living",
+		"image": "bigmom.webp"
+	},
+	{
+		"id": 258,
+		"name": "Gol D. Roger",
+		"size": "274cm",
+		"age": "53 ans",
+		"bounty": "5.564.800.000",
+		"crew": {
+			"id": 5,
+			"name": "The Pirates Roger crew",
+			"is_yonko": true
+		},
+		"job": "Captain",
+		"status": "deceased",
+		"image": "roger.webp"
+	},
+	{
+		"id": 7,
+		"name": "Nico Robin",
+		"size": "188cm",
+		"age": "30 ans",
+		"bounty": "130.000.000",
+		"crew": {
+			"id": 1,
+			"name": "Straw Hats"
+		},
+		"fruit": {
+			"id": 6,
+			"name": "Fruit Des \u00c9closions",
+			"filename": "https://images.api-onepiece.com/fruits/5f82c2c5df83335a916f98dc3b09eade.png"
+		},
+		"job": "Archaeologist",
+		"status": "living",
+		"isStrawHat": true,
+		"image": "robin.webp"
+	},
+	{
+		"id": 85,
+		"name": "Shanks",
+		"size": "199cm",
+		"age": "39 ans",
+		"bounty": "4.048.900.000",
+		"crew": {
+			"id": 2,
+			"name": "Le Roux crew",
+			"is_yonko": true
+		},
+		"job": "Captain",
+		"status": "living",
+		"image": "shanks.webp"
+	},
+	{
+		"id": 32,
+		"name": "Buggy / De Clown",
+		"size": "192cm",
+		"age": "39 ans",
+		"bounty": "344.000.000",
+		"crew": {
+			"id": 32,
+			"name": "The Cross Guild",
+			"description": null
+		},
+		"fruit": {
+			"id": 2,
+			"name": "Fruit of Fragmentation",
+			"type": "Paramecia",
+			"filename": "https://images.api-onepiece.com/fruits/ce8729339b41da72e8e0f81dd7f71eee.png",
+			"roman_name": "Bara Bara no Mi",
+			"technicalFile": "https://images.api-onepiece.com/fruits/"
+		},
+		"job": "Chairman",
+		"status": "living",
+		"image": "buggy.webp"
+	},
+	{
+		"id": 289,
+		"name": "Edward Newgate",
+		"size": "666cm",
+		"age": "72 ans",
+		"bounty": "5.046.000.000",
+		"crew": {
+			"id": 16,
+			"name": "Whitebeard\u0027s crew",
+			"description": null,
+			"status": "unknown",
+			"is_yonko": true
+		},
+		"fruit": {
+			"id": 35,
+			"name": "Fruit of Trembling",
+			"type": "Paramecia",
+			"roman_name": "Gura Gura no Mi",
+			"filename": "https://images.api-onepiece.com/fruits/",
+			"technicalFile": "https://images.api-onepiece.com/fruits/"
+		},
+		"job": "Captain",
+		"status": "deceased",
+		"image": "whitebeard.webp"
+	},
+	{
+		"id": 59,
+		"name": "Eustass Kidd",
+		"size": "205cm",
+		"age": "23 ans",
+		"bounty": "470.000.000",
+		"crew": {
+			"id": 33,
+			"name": "The Kid crew",
+			"description": null,
+			"status": "assets",
+			"is_yonko": true
+		},
+		"fruit": {
+			"id": 26,
+			"name": "Magn\u00e9to-Fruit",
+			"filename": "https://images.api-onepiece.com/fruits/79014303ec2ac76ecdefdb8b19928fb9.png",
+			"technicalFile": "https://images.api-onepiece.com/fruits/a2aa4468a770539b2ec7045d8517744c.jpg",
+			"roman_name": "Jiki Jiki no Mi"
+		},
+		"job": "Captain",
+		"status": "living",
+		"image": "kid.webp"
+	},
+	{
+		"id": 290,
+		"name": "Portgas D. Ace",
+		"size": "185cm",
+		"age": "20 ans",
+		"bounty": "550.000.000",
+		"crew": {
+			"id": 16,
+			"name": "Whitebeard\u0027s crew"
+		},
+		"fruit": {
+			"id": 82,
+			"name": "Pyro-Fruit",
+			"filename": "https://images.api-onepiece.com/fruits/a3a4f5f2d3b965e3836613b5d3036348.jpg",
+			"roman_name": "Mera Mera no Mi",
+			"technicalFile": "https://images.api-onepiece.com/fruits/"
+		},
+		"job": "Commander 2nd Ship",
+		"status": "deceased",
+		"image": "ace.webp"
 	}
 ]

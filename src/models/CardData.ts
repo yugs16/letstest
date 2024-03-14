@@ -10,4 +10,6 @@ export interface DataProps {
 
 export interface CharactersResponse {
 	name?: string;
+	image: string;
+	bounty?: string;
 }

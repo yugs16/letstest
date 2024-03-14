@@ -3,18 +3,28 @@ interface IteratorProps {
 	component: React.FC<any>;
 	data: any;
 	isLoading?: boolean;
+	spacing?: number;
+	itemViewPortSizes?: Record<string, string>;
+	containerProps?: Record<string, string>;
 }
 
 function Iterator(props: IteratorProps) {
-	const { component, data, ...rest } = props;
+	const {
+		component,
+		data,
+		spacing = 2,
+		containerProps = {},
+		itemViewPortSizes = {},
+		...rest
+	} = props;
 
 	const Component = component;
 
 	return (
-		<Grid container spacing={2}>
+		<Grid container spacing={spacing} {...containerProps}>
 			{data.map((item: any, index: number) => {
 				return (
-					<Grid item xs={1} sm={4} md={3}>
+					<Grid item {...itemViewPortSizes}>
 						<Component key={`d_comp_${index}`} data={item} {...rest} />
 					</Grid>
 				);
