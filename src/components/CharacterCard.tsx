@@ -7,9 +7,12 @@ import Typography from '@mui/material/Typography';
 import { CharactersResponse } from '../models/CardData';
 
 import SkelRect from './skeletons/rect';
-import { Box, Grid, Stack } from '@mui/material';
+import { Box, Grid, IconButton, Stack } from '@mui/material';
 
 import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
+import ContentCopyTwoToneIcon from '@mui/icons-material/ContentCopyTwoTone';
+
+import { copy, copyEvent } from '../utils';
 
 interface CardProps {
 	data: CharactersResponse;
@@ -55,11 +58,22 @@ function CharacterCard(props: CardProps) {
 					<Typography variant="h5" color="text.secondary" component="div">
 						{name}
 					</Typography>
-					<Stack direction={'row'} sx={{ ml: -0.5, mt: 0.5 }}>
-						<CurrencyBitcoinIcon />
-						<Typography sx={{ mt: 0.1 }} component="span" variant="body1">
-							{bounty}
-						</Typography>
+					<Stack direction={'row'} alignItems={'center'} sx={{}}>
+						<CurrencyBitcoinIcon sx={{ mb: 0.75 }} />
+						<Box>
+							<Typography data-testid={'test-bounty'} variant="h6">
+								{bounty}
+							</Typography>
+							<IconButton
+								data-testid={'test_copy_btn'}
+								aria-label="copy_bounty"
+								size={'small'}
+								sx={{ mb: 0.5, ml: 0.2 }}
+								onClick={copyEvent(bounty)}
+							>
+								<ContentCopyTwoToneIcon />
+							</IconButton>
+						</Box>
 					</Stack>
 				</Stack>
 			</CardContent>
