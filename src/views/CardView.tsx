@@ -46,7 +46,6 @@ function SelectSmall(props: SelectSmallProps) {
 function CardView() {
 	const [characterType, setCharacterType] = useState<string>();
 	const { data, isLoading, isError } = useGetCharacters(characterType);
-	console.log('isLoading.. ', isLoading, data);
 
 	const filterDataByCrew = useCallback(() => {
 		console.log(data, characterType);
@@ -70,7 +69,17 @@ function CardView() {
 			<Box>
 				<SelectSmall onChange={setCharacterType} value={characterType} />
 			</Box>
-			{data && (
+			{isError && <div>Some Error please check!!</div>}
+			{isLoading ? (
+				<Iterator
+					component={CharacterCard}
+					data={new Array(10).fill({})}
+					isLoading={isLoading}
+					containerProps={{
+						justifyContent: 'space-between',
+					}}
+				></Iterator>
+			) : (
 				<Iterator
 					component={CharacterCard}
 					data={filterDataByCrew()}
@@ -80,7 +89,6 @@ function CardView() {
 					}}
 				></Iterator>
 			)}
-			{isError && <div>Some Error please check!!</div>}
 		</Stack>
 	);
 }

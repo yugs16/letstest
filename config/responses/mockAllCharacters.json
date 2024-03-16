@@ -112,8 +112,8 @@
 		"name": "Dracule Mihawk",
 		"size": "198cm",
 		"age": "43 ans",
-		"bounty": "",
-		"job": "3.590.000.000",
+		"bounty": "3.590.000.000",
+		"job": "",
 		"status": "living",
 		"image": "mihawkv2.jpg",
 		"crew": {

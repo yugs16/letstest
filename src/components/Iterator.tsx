@@ -14,7 +14,7 @@ function Iterator(props: IteratorProps) {
 		data,
 		spacing = 2,
 		containerProps = {},
-		itemViewPortSizes = {},
+		itemViewPortSizes = { xs: 1, sm: 4, lg: 3 },
 		...rest
 	} = props;
 
@@ -24,7 +24,7 @@ function Iterator(props: IteratorProps) {
 		<Grid container spacing={spacing} {...containerProps}>
 			{data.map((item: any, index: number) => {
 				return (
-					<Grid item {...itemViewPortSizes}>
+					<Grid key={`g_${index}`} item {...itemViewPortSizes}>
 						<Component key={`d_comp_${index}`} data={item} {...rest} />
 					</Grid>
 				);
