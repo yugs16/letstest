@@ -9,6 +9,7 @@ import { Box, Grid, IconButton, Skeleton, Stack } from '@mui/material';
 
 import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
 import ContentCopyTwoToneIcon from '@mui/icons-material/ContentCopyTwoTone';
+import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 
 import { copy } from '../utils';
 import { useToast } from './Toast/useToast';
@@ -16,10 +17,15 @@ import { useToast } from './Toast/useToast';
 interface CardProps {
 	data?: CharactersResponse;
 	isLoading: boolean;
+	openEditBountyDialog?: (val: string) => void;
 }
 
+const iconSize = {
+	fontSize: '1.2rem',
+};
+
 function CharacterCard(props: CardProps) {
-	const { data = {}, isLoading } = props;
+	const { data = {}, isLoading, openEditBountyDialog } = props;
 	const { image, name, bounty } = data;
 	const [isClicked, setIsClicked] = useState(false);
 	const [imageData, setImageData] = useState();
@@ -93,16 +99,31 @@ function CharacterCard(props: CardProps) {
 									toast('success', 'Copied to clipboard!!');
 								}}
 							>
-								<ContentCopyTwoToneIcon sx={{ fontSize: '1.2rem' }} />
+								<ContentCopyTwoToneIcon sx={{ ...iconSize }} />
 							</IconButton>
+							<Box
+								sx={{
+									width: '100%',
+									display: 'flex',
+									justifyContent: 'flex-end',
+								}}
+							>
+								<IconButton
+									size="small"
+									aria-label="Edit Bounty"
+									onClick={
+										openEditBountyDialog
+											? () => openEditBountyDialog(bounty || '0')
+											: () => {}
+									}
+								>
+									<EditTwoToneIcon sx={{ ...iconSize }} />
+								</IconButton>
+							</Box>
 						</Stack>
 					</Stack>
 				)}
 			</CardContent>
-			{/* <CardActions>
-				<Button size="small">Share</Button>
-				<Button size="small">Learn More</Button>
-			</CardActions> */}
 		</Card>
 	);
 }

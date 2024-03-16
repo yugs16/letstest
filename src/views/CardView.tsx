@@ -9,6 +9,7 @@ import Iterator from '../components/Iterator';
 import { useGetCharacters } from '../services/queries';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
+import EditBountyDialog from '../components/EditBounty';
 
 interface SelectSmallProps {
 	onChange: (val: string) => void;
@@ -43,8 +44,19 @@ function SelectSmall(props: SelectSmallProps) {
 	);
 }
 
+interface dialogProps {
+	open: boolean;
+	bounty: string;
+}
+const initialDialogState = {
+	open: false,
+	bounty: '0',
+};
+
 function CardView() {
 	const [characterType, setCharacterType] = useState<string>();
+	const [dialog, setDialog] = useState<dialogProps>({ ...initialDialogState });
+
 	const { data, isLoading, isError } = useGetCharacters(characterType);
 
 	const filterDataByCrew = useCallback(() => {
@@ -65,31 +77,43 @@ function CardView() {
 	}, [characterType, data]);
 
 	return (
-		<Stack gap={2}>
-			<Box>
-				<SelectSmall onChange={setCharacterType} value={characterType} />
-			</Box>
-			{isError && <div>Some Error please check!!</div>}
-			{isLoading ? (
-				<Iterator
-					component={CharacterCard}
-					data={new Array(10).fill({})}
-					isLoading={isLoading}
-					containerProps={{
-						justifyContent: 'space-between',
-					}}
-				></Iterator>
-			) : (
-				<Iterator
-					component={CharacterCard}
-					data={filterDataByCrew()}
-					isLoading={isLoading}
-					containerProps={{
-						justifyContent: 'space-between',
-					}}
-				></Iterator>
-			)}
-		</Stack>
+		<>
+			<Stack gap={2} padding={4}>
+				<Box>
+					<SelectSmall onChange={setCharacterType} value={characterType} />
+				</Box>
+				{isError && <div>Some Error please check!!</div>}
+				{isLoading ? (
+					<Iterator
+						component={CharacterCard}
+						data={new Array(10).fill({})}
+						isLoading={isLoading}
+						containerProps={{
+							justifyContent: 'space-between',
+						}}
+					></Iterator>
+				) : (
+					<Iterator
+						component={CharacterCard}
+						data={filterDataByCrew()}
+						isLoading={isLoading}
+						containerProps={{
+							justifyContent: 'space-between',
+						}}
+						openEditBountyDialog={(bounty: string) =>
+							setDialog({ open: true, bounty })
+						}
+					></Iterator>
+				)}
+			</Stack>
+			<EditBountyDialog
+				open={dialog.open}
+				bounty={dialog.bounty}
+				closeDialog={() => {
+					setDialog({ ...initialDialogState });
+				}}
+			/>
+		</>
 	);
 }
 

@@ -8,13 +8,13 @@ interface IteratorProps {
 	containerProps?: Record<string, string>;
 }
 
-function Iterator(props: IteratorProps) {
+function Iterator(props: IteratorProps & any) {
 	const {
 		component,
 		data,
 		spacing = 2,
 		containerProps = {},
-		itemViewPortSizes = { xs: 1, sm: 4, lg: 3 },
+		itemViewPortSizes = {},
 		...rest
 	} = props;
 

@@ -39,18 +39,14 @@ export const ToastProvider = (props: any) => {
 				key={`s_${alert.id}`}
 				autoHideDuration={6000}
 			>
-				{alert.open ? (
-					<Alert
-						onClose={close}
-						severity={alert.type}
-						variant="filled"
-						sx={{ width: '100%' }}
-					>
-						{alert.message}
-					</Alert>
-				) : (
-					<></>
-				)}
+				<Alert
+					onClose={close}
+					severity={alert.type}
+					variant="filled"
+					sx={{ width: '100%' }}
+				>
+					{alert.open ? alert.message : null}
+				</Alert>
 			</Snackbar>
 		</ToastContext.Provider>
 	);
