@@ -37,9 +37,11 @@ function CharacterCard(props: CardProps) {
 	}
 
 	useEffect(() => {
-		if (!isLoading) {
+		if (!isLoading && image) {
 			const imageURI = `../assets/posters/${image}`;
+			`/* @vite-ignore */`;
 			import(imageURI).then((rs) => {
+				`/* @vite-ignore */`;
 				setImageData(rs.default);
 			});
 		}
@@ -49,7 +51,7 @@ function CharacterCard(props: CardProps) {
 		<Card elevation={6} raised sx={{ border: 0, borderRadius: 0 }}>
 			<CardContent style={{ padding: 0 }}>
 				{imageData ? (
-					<Box sx={{ height: 360, width: 250 }}>
+					<Box sx={{ height: 360, width: 265 }}>
 						<CardMedia
 							component="img"
 							sx={{
@@ -66,7 +68,7 @@ function CharacterCard(props: CardProps) {
 					<Skeleton
 						animation="wave"
 						variant="rectangular"
-						sx={{ height: 360, minWidth: 250 }}
+						sx={{ height: 360, minWidth: 230, width: 235 }}
 						data-testid={'test-card-media-skeleton'}
 					/>
 				)}

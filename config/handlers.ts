@@ -5,6 +5,7 @@ const baseURI = 'http://myserver/api/v1';
 const headers = ['Content-Type', 'application/json'];
 
 function getHandlers(timeout?: number) {
+	console.log('first-==========');
 	return [
 		rest.get(`/characters`, async () => {
 			if (timeout) {
@@ -14,4 +15,13 @@ function getHandlers(timeout?: number) {
 		}),
 	];
 }
+
+export const tasksHandlerException = rest.get(`/characters`, async () => {
+	console.log('calleddddd-======');
+	return new HttpResponse(null, {
+		status: 500,
+		statusText: 'Bad Request!!',
+	});
+});
+
 export { getHandlers };

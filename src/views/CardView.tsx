@@ -9,7 +9,7 @@ import Iterator from '../components/Iterator';
 import { useGetCharacters } from '../services/queries';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import EditBountyDialog from '../components/EditBounty';
+import EditBountyDialog from '../components/EditBountyDialog';
 
 interface SelectSmallProps {
 	onChange: (val: string) => void;
@@ -61,6 +61,11 @@ function CardView() {
 
 	const filterDataByCrew = useCallback(() => {
 		console.log(data, characterType);
+
+		if (isLoading) {
+			return new Array(10).fill({});
+		}
+
 		if (Array.isArray(data)) {
 			if (characterType === 'straw_hats') {
 				return data.filter((d) => d.isStrawHat);
@@ -76,22 +81,15 @@ function CardView() {
 		return [];
 	}, [characterType, data]);
 
+	console.log('ek barrr======', isError);
 	return (
 		<>
 			<Stack gap={2} padding={4}>
 				<Box>
 					<SelectSmall onChange={setCharacterType} value={characterType} />
 				</Box>
-				{isError && <div>Some Error please check!!</div>}
-				{isLoading ? (
-					<Iterator
-						component={CharacterCard}
-						data={new Array(10).fill({})}
-						isLoading={isLoading}
-						containerProps={{
-							justifyContent: 'space-between',
-						}}
-					></Iterator>
+				{isError ? (
+					<div>Some Error please check!!</div>
 				) : (
 					<Iterator
 						component={CharacterCard}
