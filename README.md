@@ -7,7 +7,7 @@
 - We will see how we can architect this test-based project.
 
 ### Architecture:
-
+- We will be using `React + TypeScript + Vite` as starting libraries
 ### Installation and Working:
 After clone and `cd letstest` follow the below steps. 
 - `npm install`
