@@ -4,8 +4,40 @@ import mockAllCharacters from './responses/mockAllCharacters.json';
 const baseURI = 'http://myserver/api/v1';
 const headers = ['Content-Type', 'application/json'];
 
+export const mockTestRes = [
+	{
+		name: 'person1',
+		bounty: '100',
+		isStrawHat: true,
+		crew: {
+			name: 'Straw Hats',
+		},
+	},
+	{
+		name: 'person2',
+		bounty: '200',
+		isStrawHat: true,
+		crew: {
+			name: 'Straw Hats',
+		},
+	},
+	{
+		name: 'person3',
+		bounty: '300',
+		crew: {
+			name: 'heart pirates',
+		},
+	},
+	{
+		name: 'person4',
+		bounty: '400',
+		crew: {
+			name: 'cross guild',
+		},
+	},
+];
+
 function getHandlers(timeout?: number) {
-	console.log('first-==========');
 	return [
 		rest.get(`/characters`, async () => {
 			if (timeout) {
@@ -16,12 +48,12 @@ function getHandlers(timeout?: number) {
 	];
 }
 
-export const tasksHandlerException = rest.get(`/characters`, async () => {
-	console.log('calleddddd-======');
-	return new HttpResponse(null, {
-		status: 500,
-		statusText: 'Bad Request!!',
-	});
+export const mockForTestSuccess = rest.get(`/characters`, async () => {
+	return HttpResponse.json(mockTestRes);
+});
+
+export const mockForTestError = rest.get(`/characters`, async () => {
+	return HttpResponse.error();
 });
 
 export { getHandlers };

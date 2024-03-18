@@ -27,6 +27,7 @@ function SelectSmall(props: SelectSmallProps) {
 		<FormControl sx={{ minWidth: 120 }} size="small">
 			<InputLabel id="demo-select-small-label">Crews</InputLabel>
 			<Select
+				data-testid="test-small-select"
 				labelId="demo-select-small-label"
 				id="demo-select-small"
 				value={value}
@@ -60,8 +61,6 @@ function CardView() {
 	const { data, isLoading, isError } = useGetCharacters(characterType);
 
 	const filterDataByCrew = useCallback(() => {
-		console.log(data, characterType);
-
 		if (isLoading) {
 			return new Array(10).fill({});
 		}
@@ -81,7 +80,6 @@ function CardView() {
 		return [];
 	}, [characterType, data]);
 
-	console.log('ek barrr======', isError);
 	return (
 		<>
 			<Stack gap={2} padding={4}>

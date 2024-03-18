@@ -1,5 +1,5 @@
 import Grid from '@mui/material/Grid';
-interface IteratorProps {
+export interface IteratorProps {
 	component: React.FC<any>;
 	data: any;
 	isLoading?: boolean;
