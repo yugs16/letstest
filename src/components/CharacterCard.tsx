@@ -35,7 +35,6 @@ function CharacterCard(props: CardProps) {
 			const imageURI = `../assets/images/${image}/`;
 			// @vite-ignore
 			import(imageURI).then((rs) => {
-				console.log('ssasa');
 				// @vite-ignore
 
 				setImageData(rs.default);
