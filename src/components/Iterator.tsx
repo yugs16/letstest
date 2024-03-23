@@ -1,4 +1,4 @@
-import Grid from '@mui/material/Grid';
+import { Grid } from '@mui/material';
 export interface IteratorProps {
 	component: React.FC<any>;
 	data: any;

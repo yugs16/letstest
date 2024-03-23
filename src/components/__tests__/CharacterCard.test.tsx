@@ -21,24 +21,28 @@ vi.mock('./Toast/useToast', () => {
 });
 
 describe('CharacterCard', () => {
-	test('should render skeletons in laoding state', () => {
-		render(<CharacterCard isLoading={true} />);
-		expect(screen.getByTestId('test-card-media-skeleton')).toBeInTheDocument();
-		expect(
-			screen.getByTestId('test-name-skeleton-wrapper')
-		).toBeInTheDocument();
-	});
+	describe('should render ', () => {
+		test('skeletons in laoding state', () => {
+			render(<CharacterCard isLoading={true} />);
+			expect(
+				screen.getByTestId('test-card-media-skeleton')
+			).toBeInTheDocument();
+			expect(
+				screen.getByTestId('test-name-skeleton-wrapper')
+			).toBeInTheDocument();
+		});
 
-	test('should render the CharacterCard component with expected props', () => {
-		render(<CharacterCard {...defaultProps} />);
+		test('the CharacterCard component with expected props', () => {
+			render(<CharacterCard {...defaultProps} />);
 
-		expect(screen.getByText('nami')).toBeInTheDocument();
+			expect(screen.getByText('nami')).toBeInTheDocument();
 
-		// good to have data-tesid for the components you think will be hard to find, or needed to be differentiated amoung multiple similar ones
-		expect(screen.getByTestId('test-bounty').innerHTML).toBe('100');
+			// good to have data-tesid for the components you think will be hard to find, or needed to be differentiated amoung multiple similar ones
+			expect(screen.getByTestId('test-bounty').innerHTML).toBe('100');
 
-		waitFor(() => {
-			expect(screen.queryByRole('img')).toBeInTheDocument();
+			waitFor(() => {
+				expect(screen.queryByRole('img')).toBeInTheDocument();
+			});
 		});
 	});
 

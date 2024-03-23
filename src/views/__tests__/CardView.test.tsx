@@ -11,7 +11,6 @@ import {
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useGetCharacters } from '../../services/queries';
 import { IteratorProps } from '../../components/Iterator';
-import React from 'react';
 
 const mockCheckIteratorProps = vi.fn();
 const mockEditBountyDialogCheckProps = vi.fn();
@@ -216,7 +215,7 @@ describe('CardView Component', () => {
 		});
 	});
 
-	test.only('renders error message when isError is true', async () => {
+	test('renders error message when isError is true', async () => {
 		// Mocking useGetCharacters hook to return isError true
 		server.use(mockForTestError);
 		const { result } = renderHook(() => useGetCharacters(), {

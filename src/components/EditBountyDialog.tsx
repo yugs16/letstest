@@ -32,7 +32,7 @@ export default function EditBountyDialog(props: EditBountyDialogProps) {
 		if (closeDialog) closeDialog();
 	};
 
-	const handleChange = (e) => {
+	const handleChange = (e: any) => {
 		console.log('bounty changed');
 		setBountyVal(e.target.value);
 	};

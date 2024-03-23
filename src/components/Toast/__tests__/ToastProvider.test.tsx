@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react';
 import { ToastProvider } from '../ToastProvider';
 import { useToast } from '../useToast';
 import userEvent from '@testing-library/user-event';
-import { ToastContext } from '../ToastContext';
 
 const mockCheckProps = vi.fn();
 

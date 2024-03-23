@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CharactersResponse } from '../models/CardData';
-import { Box, Grid, IconButton, Skeleton, Stack } from '@mui/material';
+import { Box, IconButton, Skeleton, Stack } from '@mui/material';
 
 import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
 import ContentCopyTwoToneIcon from '@mui/icons-material/ContentCopyTwoTone';
@@ -27,23 +26,21 @@ const iconSize = {
 function CharacterCard(props: CardProps) {
 	const { data = {}, isLoading, openEditBountyDialog } = props;
 	const { image, name, bounty } = data;
-	const [isClicked, setIsClicked] = useState(false);
-	const [imageData, setImageData] = useState();
+	const [imageData, setImageData] = useState<string>();
 
 	const { toast } = useToast();
 
-	function handleClick() {
-		setIsClicked(!isClicked);
-	}
-
 	useEffect(() => {
 		if (!isLoading && image) {
-			const imageURI = `../assets/posters/${image}`;
-			`/* @vite-ignore */`;
+			const imageURI = `../assets/images/${image}/`;
+			// @vite-ignore
 			import(imageURI).then((rs) => {
-				`/* @vite-ignore */`;
+				console.log('ssasa');
+				// @vite-ignore
+
 				setImageData(rs.default);
 			});
+			// setImageData(imageURI);
 		}
 	}, [image, isLoading]);
 
@@ -51,7 +48,7 @@ function CharacterCard(props: CardProps) {
 		<Card elevation={6} raised sx={{ border: 0, borderRadius: 0 }}>
 			<CardContent style={{ padding: 0 }}>
 				{imageData ? (
-					<Box sx={{ height: 360, width: 265 }}>
+					<Box sx={{ height: 360 }}>
 						<CardMedia
 							component="img"
 							sx={{
