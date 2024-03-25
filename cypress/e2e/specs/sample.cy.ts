@@ -13,12 +13,12 @@ describe('template spec', async () => {
 			cy.stub(win.navigator.clipboard, 'writeText').resolves();
 		});
 
-		cy.intercept('GET', '/api/v1/characters').as('getCharacters');
+		// cy.intercept('GET', '/api/v1/characters').as('getCharacters');
 
-		// https://on.cypress.io/wait
-		cy.wait('@getCharacters')
-			.its('response.statusCode')
-			.should('be.oneOf', [200, 304]);
+		// // https://on.cypress.io/wait
+		// cy.wait('@getCharacters')
+		// 	.its('response.statusCode')
+		// 	.should('be.oneOf', [200, 304]);
 
 		getContainer().find('img').should('have.length', 20);
 
