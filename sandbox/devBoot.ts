@@ -8,7 +8,6 @@ const prepare = async () => {
 	worker.start({
 		onUnhandledRequest: 'bypass',
 	});
-	return worker.start();
 };
 
 export { prepare };

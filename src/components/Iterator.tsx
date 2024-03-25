@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material';
 export interface IteratorProps {
+	id?: string;
 	component: React.FC<any>;
 	data: any;
 	isLoading?: boolean;
@@ -11,6 +12,7 @@ export interface IteratorProps {
 function Iterator(props: IteratorProps & any) {
 	const {
 		component,
+		id,
 		data,
 		spacing = 2,
 		containerProps = {},
@@ -21,7 +23,12 @@ function Iterator(props: IteratorProps & any) {
 	const Component = component;
 
 	return (
-		<Grid container spacing={spacing} {...containerProps}>
+		<Grid
+			container
+			spacing={spacing}
+			{...containerProps}
+			data-testid={id || 'iterator-container'}
+		>
 			{data.map((item: any, index: number) => {
 				return (
 					<Grid key={`g_${index}`} item {...itemViewPortSizes}>

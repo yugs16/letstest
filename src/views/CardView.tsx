@@ -28,6 +28,7 @@ function SelectSmall(props: SelectSmallProps) {
 			<InputLabel id="demo-select-small-label">Crews</InputLabel>
 			<Select
 				data-testid="test-small-select"
+				data-cy="cy-select-comp"
 				labelId="demo-select-small-label"
 				id="demo-select-small"
 				value={value}
@@ -82,7 +83,7 @@ function CardView() {
 
 	return (
 		<>
-			<Stack gap={2} padding={4}>
+			<Stack gap={2} padding={4} data-testid="test-card-view">
 				<Box>
 					<SelectSmall onChange={setCharacterType} value={characterType} />
 				</Box>
@@ -90,6 +91,7 @@ function CardView() {
 					<div>Some Error please check!!</div>
 				) : (
 					<Iterator
+						id={'card-view-container'}
 						component={CharacterCard}
 						data={filterDataByCrew()}
 						isLoading={isLoading}

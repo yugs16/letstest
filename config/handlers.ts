@@ -1,8 +1,5 @@
-import { http as rest, HttpResponse, delay } from 'msw';
+import { http as rest, HttpResponse, delay, passthrough } from 'msw';
 import mockAllCharacters from './responses/mockAllCharacters.json';
-
-// const baseURI = 'http://myserver/api/v1';
-// const headers = ['Content-Type', 'application/json'];
 
 export const mockTestRes = [
 	{
@@ -39,11 +36,21 @@ export const mockTestRes = [
 
 function getHandlers(timeout?: number) {
 	return [
-		rest.get(`http://localhost:4000/characters`, async () => {
+		rest.get(`/api/v1/characters`, async () => {
 			if (timeout) {
 				await delay(timeout);
 				return HttpResponse.json(mockAllCharacters);
 			} else return HttpResponse.json(mockAllCharacters);
+		}),
+
+		rest.get('**/*.svg', () => {
+			// let images load from client itself
+			passthrough();
+		}),
+
+		rest.get('**/images/*', () => {
+			// let images load from client itself
+			passthrough();
 		}),
 
 		// return HttpResponse.
@@ -58,7 +65,6 @@ function getHandlers(timeout?: number) {
 		// 		'Content-Type': 'image/webbp',
 		// 	},
 		// });
-		// return H;
 		// }),
 	];
 }
