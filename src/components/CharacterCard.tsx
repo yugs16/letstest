@@ -54,6 +54,7 @@ function CharacterCard(props: CardProps) {
 								backgroundSize: 'contain',
 								height: 'inherit',
 								width: '100%',
+								objectFit: 'contain',
 							}}
 							image={imageData}
 							title="Bounty Poster"

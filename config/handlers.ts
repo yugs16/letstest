@@ -34,9 +34,11 @@ export const mockTestRes = [
 	},
 ];
 
+const apiURI = 'http://localhost:4000/api/v1/characters';
+
 function getHandlers(timeout?: number) {
 	return [
-		rest.get(`/api/v1/characters`, async () => {
+		rest.get(apiURI, async () => {
 			if (timeout) {
 				await delay(timeout);
 				return HttpResponse.json(mockAllCharacters);
@@ -69,11 +71,11 @@ function getHandlers(timeout?: number) {
 	];
 }
 
-export const mockForTestSuccess = rest.get(`/characters`, async () => {
+export const mockForTestSuccess = rest.get(apiURI, () => {
 	return HttpResponse.json(mockTestRes);
 });
 
-export const mockForTestError = rest.get(`/characters`, async () => {
+export const mockForTestError = rest.get(apiURI, () => {
 	return HttpResponse.error();
 });
 

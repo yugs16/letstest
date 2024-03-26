@@ -10,7 +10,10 @@
 		"lint-fix": "eslint . --fix --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
 		"test": "vitest watch",
-		"test-coverage": "vitest --ui"
+		"test-coverage": "vitest run --coverage",
+		"test-preview": "vitest --coverage --ui",
+		"cy-run": "cypress run",
+		"cy-open": "cypress open"
 	},
 	"dependencies": {
 		"@emotion/react": "^11.11.4",
@@ -33,6 +36,7 @@
 		"@typescript-eslint/eslint-plugin": "^7.1.1",
 		"@typescript-eslint/parser": "^7.1.1",
 		"@vitejs/plugin-react": "^4.2.1",
+		"@vitest/coverage-v8": "^1.4.0",
 		"@vitest/ui": "^1.4.0",
 		"cypress": "^13.7.1",
 		"eslint": "^8.57.0",

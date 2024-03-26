@@ -6,6 +6,7 @@ export default defineConfig({
 		// setupNodeEvents(on, config) {
 		//   // implement node event listeners here
 		// },
+		specPattern: 'cypress/e2e/**/specs/**/*.cy.[jt]s',
 	},
 	// chromeWebSecurity: false, // will enable this if our server api points to diff server
 	requestTimeout: 10000,

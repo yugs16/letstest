@@ -13,7 +13,9 @@ describe('template spec', async () => {
 			cy.stub(win.navigator.clipboard, 'writeText').resolves();
 		});
 
-		// cy.intercept('GET', '/api/v1/characters').as('getCharacters');
+		cy.intercept('GET', 'http://localhost:4000/api/v1/characters').as(
+			'getCharacters'
+		);
 
 		// // https://on.cypress.io/wait
 		// cy.wait('@getCharacters')

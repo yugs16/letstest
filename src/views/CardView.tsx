@@ -59,7 +59,7 @@ function CardView() {
 	const [characterType, setCharacterType] = useState<string>();
 	const [dialog, setDialog] = useState<dialogProps>({ ...initialDialogState });
 
-	const { data, isLoading, isError } = useGetCharacters(characterType);
+	const { data, isLoading, isError } = useGetCharacters();
 
 	const filterDataByCrew = useCallback(() => {
 		if (isLoading) {
